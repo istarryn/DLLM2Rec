@@ -303,7 +303,7 @@ if __name__ == '__main__':
     seq_size = data_statis['seq_size'][0]  # the length of history to define the seq
     item_num = data_statis['item_num'][0]  # total number of items
 
-    topk = [1, 5, 10, 20]
+    topk = [5, 10, 20, 30]
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     model_name = args.model_name
@@ -331,7 +331,7 @@ if __name__ == '__main__':
 
     tocf_data_directory = './tocf/' + args.data
     if args.lam != 0:       
-        candidate_path = os.path.join(tocf_data_directory, 'myrank_train_float32.txt')
+        candidate_path = os.path.join(tocf_data_directory, 'myrank_train.txt')
         all_candidate = np.loadtxt(candidate_path)
         all_candidate = torch.LongTensor(all_candidate).to(device) # [train_data_num, k]
         llm_confidence_path = os.path.join(tocf_data_directory, 'confidence_train.txt')
