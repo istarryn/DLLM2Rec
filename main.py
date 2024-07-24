@@ -64,11 +64,9 @@ class GRU(nn.Module):
     def forward(self, states, len_states, llm_emb=None):
         # Supervised Head
         emb = self.item_embeddings(states)
-        ############################## ED ##############################
         if llm_emb != None:
             llm_emb = self.fc_4096_64(llm_emb)
             emb = emb + args.ed_weight * llm_emb
-        ############################## ED ##############################
         if 0 in len_states:
             len_states = [max(1, length) for length in len_states]
         emb_packed = torch.nn.utils.rnn.pack_padded_sequence(emb, len_states, batch_first=True, enforce_sorted=False)
@@ -120,11 +118,9 @@ class Caser(nn.Module):
 
     def forward(self, states, len_states, llm_emb=None):
         input_emb = self.item_embeddings(states)
-        ############################## ED ##############################
         if llm_emb != None:
             llm_emb = self.fc_4096_64(llm_emb)
             input_emb = input_emb + args.ed_weight * llm_emb
-        ############################## ED ##############################
         mask = torch.ne(states, self.item_num).float().unsqueeze(-1)
         input_emb *= mask
         input_emb = input_emb.unsqueeze(1)
@@ -178,7 +174,6 @@ class SASRec(nn.Module):
 
     def forward(self, states, len_states, llm_emb=None):
         inputs_emb = self.item_embeddings(states)
-        ############################## ED ##############################
         if llm_emb != None:
             llm_emb = self.fc_4096_64(llm_emb)
             inputs_emb = inputs_emb + args.ed_weight * llm_emb
@@ -435,7 +430,6 @@ if __name__ == '__main__':
             else:
                 loss_all = loss
 
-            ############################## RD ##############################
             if args.lam != 0:
                 candidate = all_candidate[sample] # [1024,k]
                 candidate = candidate[:,:args.candidate_topk]   
