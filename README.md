@@ -6,7 +6,6 @@ Data processing and LLM-based Recommender in our work referred to https://github
 
 Data processing：
 Amazon_reviews: https://github.com/SAI990323/BIGRec/blob/main/data/game/process.ipynb
-
 MovieLens: https://github.com/SAI990323/BIGRec/blob/main/data/movie/process.ipynb
 
 To effectively utilize teacher's knowledge, please prepare following files from a LLM-based Recommender and save them at "./tocf/{dataset}":
