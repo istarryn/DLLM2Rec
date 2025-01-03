@@ -20,9 +20,15 @@ python main.py --data game --model_name SASRec --alpha 0.5 --ed_weight 0.3 --lam
 ### Cite:
 If you find this work useful, please cite our paper :)
 > @inproceedings{cui2024distillation,
+> 
 >   title={Distillation matters: empowering sequential recommenders to match the performance of large language models},
+> 
 >   author={Cui, Yu and Liu, Feng and Wang, Pengbo and Wang, Bohao and Tang, Heng and Wan, Yi and Wang, Jun and Chen, Jiawei},
+> 
 >   booktitle={Proceedings of the 18th ACM Conference on Recommender Systems},
+> 
 >   pages={507--517},
+> 
 >   year={2024}
+> 
 > }
