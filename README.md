@@ -5,8 +5,8 @@ This is the implementation of our paper: "Distillation Matters: Empowering Seque
 Data processing and LLM-based Recommender in our work referred to https://github.com/SAI990323/Grounding4Rec.
 
 Data processing：
-Amazon_reviews: https://github.com/SAI990323/BIGRec/blob/main/data/game/process.ipynb
-MovieLens: https://github.com/SAI990323/BIGRec/blob/main/data/movie/process.ipynb
+* Amazon_reviews: https://github.com/SAI990323/BIGRec/blob/main/data/game/process.ipynb
+* MovieLens: https://github.com/SAI990323/BIGRec/blob/main/data/movie/process.ipynb
 
 To effectively utilize teacher's knowledge, please prepare following files from a LLM-based Recommender and save them at "./tocf/{dataset}":
 * "all_embeddings.pt" (num_item X llm_emb_size) : the semantic embedding for all items encoded by LLM. (Please refer to "predict_embeddings" in https://github.com/SAI990323/BIGRec/blob/main/data/movie/evaluate.py)
