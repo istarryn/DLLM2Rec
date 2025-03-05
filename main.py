@@ -298,7 +298,7 @@ if __name__ == '__main__':
     seq_size = data_statis['seq_size'][0]  # the length of history to define the seq
     item_num = data_statis['item_num'][0]  # total number of items
 
-    topk = [5, 10, 20, 30]
+    topk = [1, 5, 10, 20]
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
     model_name = args.model_name
